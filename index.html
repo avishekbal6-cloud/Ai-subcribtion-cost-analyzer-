@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>⚡ AI Panel</h2>
+        <nav>
+            <a onclick="showSection('dashboard')" class="active">Dashboard</a>
+            <a onclick="showSection('analytics')">Analytics</a>
+            <a onclick="showSection('prediction')">Predictions</a>
+        </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- DASHBOARD -->
+        <div id="dashboard" class="section">
+
+            <div class="topbar">
+                <h1>Dashboard</h1>
+
+                <div class="filters">
+                    <select id="countryFilter">
+                        <option>All Countries</option>
+                        <option>India</option>
+                        <option>USA</option>
+                    </select>
+
+                    <select id="planFilter">
+                        <option>All Plans</option>
+                        <option>Basic</option>
+                        <option>Standard</option>
+                        <option>Premium</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="card hover">
+                    <p>Total Revenue</p>
+                    <h2 id="revenue">--</h2>
+                </div>
+
+                <div class="card hover">
+                    <p>Churn Rate</p>
+                    <h2 id="churn">--</h2>
+                </div>
+
+                <div class="card hover">
+                    <p>Watch Time</p>
+                    <h2 id="watch">--</h2>
+                </div>
+            </div>
+
+            <div class="card chart">
+                <h3>Revenue by Plan</h3>
+                <canvas id="chart"></canvas>
+            </div>
+
+        </div>
+
+        <!-- ANALYTICS -->
+        <div id="analytics" class="section hidden">
+            <h2>📊 Analytics Coming Soon</h2>
+        </div>
+
+        <!-- PREDICTION -->
+        <div id="prediction" class="section hidden">
+
+            <div class="card form">
+                <h3>🤖 Predict Churn</h3>
+
+                <div class="form-grid">
+                    <input id="age" placeholder="Age">
+
+                    <select id="country">
+                        <option>India</option>
+                        <option>USA</option>
+                    </select>
+
+                    <select id="subscription">
+                        <option>Basic</option>
+                        <option>Standard</option>
+                        <option>Premium</option>
+                    </select>
+
+                    <input id="fee" placeholder="Monthly Fee">
+                    <input id="watch_time" placeholder="Watch Time">
+                </div>
+
+                <button onclick="predictChurn()">Predict</button>
+
+                <p id="result"></p>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

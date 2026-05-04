@@ -1,0 +1,20 @@
+[
+  {
+    "user_id": "U100001",
+    "age": 22,
+    "country": "India",
+    "subscription_type": "Premium",
+    "monthly_fee": 1200,
+    "avg_watch_time_minutes": 180,
+    "churned": "No"
+  },
+  {
+    "user_id": "U100002",
+    "age": 35,
+    "country": "USA",
+    "subscription_type": "Standard",
+    "monthly_fee": 800,
+    "avg_watch_time_minutes": 120,
+    "churned": "Yes"
+  }
+]
